@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://127.0.0.1:8000/users/9999
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\": \"mohamed@gmail.com\"\r
+
+    }"
+order: 4152437597456622

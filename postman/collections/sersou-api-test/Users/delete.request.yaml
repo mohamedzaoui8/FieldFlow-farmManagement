@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://127.0.0.1:8000/users/3
+method: PATCH
+body:
+  type: json
+  content: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 4197255559389221

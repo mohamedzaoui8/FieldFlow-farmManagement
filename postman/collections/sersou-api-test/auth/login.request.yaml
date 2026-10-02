@@ -1,0 +1,30 @@
+$kind: http-request
+url: http://127.0.0.1:8000/auth/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"mohamed@gmail.com\",\r
+
+    \  \"password\": \"mohamed\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const response = pm.response.json();\r
+
+      \r
+
+      console.log(response);\r
+
+      console.log(\"Token:\", response.access_token);\r
+
+      \r
+
+      pm.environment.set(\"auth_token\", response.access_token);"
+    language: text/javascript
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+order: 1788816807553

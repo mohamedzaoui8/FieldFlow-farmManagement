@@ -1,0 +1,6 @@
+name: Sersou API - Local
+values:
+  - key: base_url
+    value: 'http://localhost:8000'
+  - key: auth_token
+    value: ''
