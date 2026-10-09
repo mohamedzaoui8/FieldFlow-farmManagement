@@ -23,7 +23,7 @@ def create_user(
     existing_user = db.query(User).filter(User.email == user_data.email).first()
 
     if existing_user:
-        raise HTTPException(status_code=400, detail="Email already registered")
+        raise HTTPException(status_code=400, detail="البريد الإلكتروني مسجل مسبقاً")
 
     hashed_password = hash_password(user_data.password)
 

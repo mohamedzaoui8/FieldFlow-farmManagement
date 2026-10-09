@@ -11,7 +11,7 @@ router = APIRouter(
     tags=["Authentication"]
 )
 
-
+#---------Login endpoint---------#
 @router.post("/login", response_model=TokenResponse)
 def login(
     login_data: LoginRequest,
@@ -27,6 +27,11 @@ def login(
             status_code=401,
             detail="البريد الإلكتروني أو كلمة المرور غير صالحة"
         )
+    if not user.is_active:
+        raise HTTPException(
+        status_code=401,
+        detail="الحساب غير نشط"
+    )
 
     if not verify_password(
         login_data.password,
@@ -34,7 +39,7 @@ def login(
     ):
         raise HTTPException(
             status_code=401,
-            detail="Invalid email or password"
+            detail="البريد الإلكتروني أو كلمة المرور غير صالحة"
         )
 
     access_token = create_access_token(user.id)

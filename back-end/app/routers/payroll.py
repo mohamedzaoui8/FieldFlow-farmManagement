@@ -34,7 +34,7 @@ def get_payroll(
         chef_id=chef_id,
     )
 
-@router.post("/is-payed", response_model=PayrollResponse)
+#@router.post("/is-payed", response_model=PayrollResponse)
  
     
 
