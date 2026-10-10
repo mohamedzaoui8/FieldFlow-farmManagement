@@ -1,8 +1,5 @@
 from test_auth import add_user
 
-from app.database.database import get_db
-from app.models.user import User
-
 
 def get_owner_token(client):
     add_user(client, "owner@example.com", "ownerpassword123")

@@ -15,6 +15,7 @@ class UserCreate(BaseModel):
             raise ValueError("كلمة المرور يجب أن تكون على الأقل 8 أحرف")
         if not re.search(r"[A-zA-z\u0600-\u06ff]", v):
             raise ValueError("كلمة المرور يجب أن تحتوي على حرف كبير واحد على الأقل")
+        return v
 
 
 class UserResponse(BaseModel):
