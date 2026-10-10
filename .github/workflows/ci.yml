@@ -1,3 +1,4 @@
+# C:\Users\tassili\Downloads\sersou-project\back-end\.github\workflow/ci.yml
 name: Backend CI
 
 on:
@@ -8,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: sqlite:///./ci.db
+      SECRET_KEY: ci-only-test-secret
     steps:
     - name: get the project files
       uses: actions/checkout@v7
